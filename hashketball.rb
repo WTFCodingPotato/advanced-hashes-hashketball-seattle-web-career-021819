@@ -14,7 +14,11 @@ hash = {:home => {
         :blocks => 1,
         :slam_dunks => 1
       },
+<<<<<<< HEAD
       "Reggie Evans" =>{
+=======
+      "Reggie Evens" =>{
+>>>>>>> 8f4319ca36934c432a590639f501b17a3fee472f
         :number => 30,
         :shoe => 14,
         :points => 12,
@@ -114,6 +118,7 @@ hash = {:home => {
   }
 }
 end
+<<<<<<< HEAD
 
 def team_colors(team_name)
   game_hash.each do |location, team_data|
@@ -155,10 +160,18 @@ def player_stats(name)
       if player == name
         return data
       end
+=======
+
+def team_colors(team_name)
+  game_hash.each do |location, team_data|
+    if team_data[:team_name] == team_name
+      return team_data[:colors]
+>>>>>>> 8f4319ca36934c432a590639f501b17a3fee472f
     end
   end
 end
 
+<<<<<<< HEAD
 def player_numbers(team)
   numbers = []
   game_hash.each do |location, team_data|
@@ -183,4 +196,22 @@ def big_shoe_rebounds
     end
   end
   rebounds
+=======
+def team_names
+  game_hash.collect do |location, team_data|
+    team_data[:team_name]
+  end
+end
+
+def num_points_scored(name)
+  points = nil
+  game_hash.each do |location, team_data|
+    team_data[:players].each do |player, data|
+      if player == name
+        points = data[:points]
+      end
+    end
+  end
+  points
+>>>>>>> 8f4319ca36934c432a590639f501b17a3fee472f
 end
